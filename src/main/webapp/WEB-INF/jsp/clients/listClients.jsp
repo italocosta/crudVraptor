@@ -9,6 +9,7 @@
 <title>ListClients</title>
 </head>
 <body>
+	<a href="#">New client</a>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -24,6 +25,8 @@
 				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${c.birthDay}" /></td>
 				<td>${c.height}</td>
 				<td>${c.active}</td>
+				<td><a href="${linkTo[ClientsController].editClient(c.id)}">Edit</a></td>
+				<td><a href="#">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
