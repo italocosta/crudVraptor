@@ -10,6 +10,9 @@ public class Client {
 	private Double height;
 	private boolean active;
 	
+	public Client() {
+	}
+	
 	public Client(Integer id, String name, Date birthDay, Double height, boolean active) {
 		super();
 		this.id = id;
