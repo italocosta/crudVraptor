@@ -9,7 +9,7 @@
 <title>ListClients</title>
 </head>
 <body>
-	<a href="#">New client</a>
+	<a href="${linkTo[ClientController].addClient()}">New client</a>
 	<table>
 		<tr>
 			<th>ID</th>

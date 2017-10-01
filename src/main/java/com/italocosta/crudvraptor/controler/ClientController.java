@@ -1,7 +1,6 @@
 package com.italocosta.crudvraptor.controler;
 
 import javax.inject.Inject;
-import javax.validation.constraints.NotNull;
 
 import com.italocosta.crudvraptor.model.Client;
 import com.italocosta.crudvraptor.service.ClientService;
@@ -9,6 +8,7 @@ import com.italocosta.crudvraptor.service.ClientService;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.Validator;
@@ -29,14 +29,25 @@ public class ClientController {
 		result.include("clientList", service.getAllClients());
 	}
 	
-	@Put("/{client.id}")
+	@Get("add/")
+	public void addClient() {		
+	}
+	
+	@Post("/")
+	public void toAdd(Client client) {
+		validator.onErrorUsePageOf(this).editClient(client.getId());
+		service.createClient(client);
+		result.redirectTo(this).listClients();
+	}
+	
+	@Put("/")
 	public void toEdit(Client client) {
 		validator.onErrorUsePageOf(this).editClient(client.getId());
 		service.updateClient(client);
 		result.redirectTo(this).listClients();
 	}
 	
-	@Get("/{id}")
+	@Get("edit/{id}")
 	public void editClient(Integer id) {		
 		result.include("client", service.getClientById(id));
 	}
