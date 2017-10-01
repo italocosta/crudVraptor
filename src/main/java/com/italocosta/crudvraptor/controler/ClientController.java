@@ -6,6 +6,7 @@ import com.italocosta.crudvraptor.model.Client;
 import com.italocosta.crudvraptor.service.ClientService;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -50,5 +51,11 @@ public class ClientController {
 	@Get("edit/{id}")
 	public void editClient(Integer id) {		
 		result.include("client", service.getClientById(id));
+	}
+	
+	@Delete("/{id}")
+	public void toDelete(Integer id) {
+		service.removeClient(id);
+		result.redirectTo(this).listClients();
 	}
 }

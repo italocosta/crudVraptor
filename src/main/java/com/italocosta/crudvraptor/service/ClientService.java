@@ -27,4 +27,8 @@ public class ClientService {
 	public void updateClient(Client client) {
 		repo.updateClient(client);
 	}
+	
+	public void removeClient(Integer id) {
+		repo.deleteClient(id);
+	}
 }

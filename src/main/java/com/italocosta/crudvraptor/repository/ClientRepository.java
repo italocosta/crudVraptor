@@ -6,9 +6,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import com.italocosta.crudvraptor.model.Client;
 
-
+@ApplicationScoped
 public class ClientRepository {
 	
 	private static final Set<Client> CLIENTS = new HashSet<Client>();
@@ -41,8 +43,8 @@ public class ClientRepository {
 		return CLIENTS.add(client);
 	}
 	
-	public Boolean deleteClient(Client client) {
-		return CLIENTS.remove(client);
+	public Boolean deleteClient(Integer id) {
+		return CLIENTS.remove(getClientById(id));
 	}
 	
 }

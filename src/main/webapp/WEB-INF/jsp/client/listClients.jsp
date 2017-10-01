@@ -26,7 +26,11 @@
 				<td>${c.height}</td>
 				<td>${c.active}</td>
 				<td><a href="${linkTo[ClientController].editClient(c.id)}">Edit</a></td>
-				<td><a href="#">Delete</a></td>
+				<td>
+					<form action="${linkTo[ClientController].toDelete(c.id)}" method="post">
+						<button type="submit" name="_method" value="DELETE">Delete</button>
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
