@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.italocosta.crudvraptor</groupId>
+	<groupId>com.italocosta</groupId>
 	<artifactId>crudVraptor</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<description>A Crud of Clients using VRaptor 4</description>
+	<description>A blank project to start using VRaptor 4</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,20 +26,20 @@
 			<artifactId>weld-servlet-core</artifactId>
 			<version>2.1.2.Final</version>
 		</dependency>
-		
-        <dependency>
-            <groupId>org.jboss.weld</groupId>
-            <artifactId>weld-core-impl</artifactId>
-            <version>2.1.2.Final</version>
-        </dependency>
 
 		<dependency>
-		    <groupId>javax.el</groupId>
-		    <artifactId>el-api</artifactId>
-		    <version>2.2</version>
-		    <scope>provided</scope>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core-impl</artifactId>
+			<version>2.1.2.Final</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-cdi</artifactId>
@@ -75,8 +76,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -107,7 +108,7 @@
 								</artifactItem>
 							</artifactItems>
 						</configuration>
-						
+
 					</execution>
 				</executions>
 			</plugin>
