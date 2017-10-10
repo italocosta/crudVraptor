@@ -28,7 +28,7 @@
 			value="${client.height }" type="number" step="0.01" min="0.01"
 			max="2.99" /><br />
 		<button type="submit">Save</button>
-		<button type="reset">Cancel</button>
+		<a href="${linkTo[ClientController].listClients()}">Cancel</a>
 
 	</form>
 </body>
